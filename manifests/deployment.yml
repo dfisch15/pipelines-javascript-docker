@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: dfischpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dfischpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: dfischpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: dfischpipelinesjavascriptdocker 
+          image: pro690a2dfisch.azurecr.io/dfischpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
